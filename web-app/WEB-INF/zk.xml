@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+    <listener>
+        <description>ThreadLocal Synchronization Listener</description>
+        <listener-class>org.zkoss.zkplus.util.ThreadLocalListener</listener-class>
+    </listener>
+    <zscript-config>
+        <language-name>GroovyGrails</language-name>
+        <interpreter-class>
+            org.zkoss.zkgrails.scripting.GroovyGrailsInterpreter
+        </interpreter-class>
+    </zscript-config>
+    <preference>
+        <name>ThreadLocal</name>
+        <value>
+            org.springframework.transaction.support.TransactionSynchronizationManager=resources,
+            synchronizations,currentTransactionName,currentTransactionReadOnly,actualTransactionActive;
+            org.springframework.orm.hibernate3.SessionFactoryUtils=deferredCloseHolder;
+            org.springframework.transaction.interceptor.TransactionAspectSupport=transactionInfoHolder;
+            org.springframework.web.context.request.RequestContextHolder=requestAttributesHolder,inheritableRequestAttributesHolder;
+        </value>
+    </preference>
+    <library-property>
+        <name>org.zkoss.zk.ui.metainfo.page.Loader.class</name>
+        <value>org.zkoss.web.util.resource.CustomContentLoader</value>
+    </library-property>
+
+    <session-config>
+        <timer-keep-alive>true</timer-keep-alive>
+    </session-config>
+
+    <session-config>
+        <device-type>ajax</device-type>
+        <timeout-message>Session timeout. Please reload.</timeout-message>
+        <!--<timeout-message>label:test.test</timeout-message>-->
+    </session-config>
+
+    <error-page>
+            <exception-type>java.lang.Throwable</exception-type>
+            <location>/WEB-INF/error.zul</location>
+        </error-page>
+
+    <!-- ====================================================== -->
+    	<!--   Displays the wait indicator on every user action     -->
+    	<!-- ====================================================== -->
+    	<library-property>
+    		<name>org.zkoss.zul.progressbox.position</name>
+    		<value>center</value>
+    	</library-property>
+    	<client-config>
+    		<processing-prompt-delay>1</processing-prompt-delay>
+    	</client-config>
+
+   <!-- <library-property>
+     <name>org.zkoss.theme.preferred</name>
+     <value>silvertail</value>
+</library-property>-->
+
+</zk>

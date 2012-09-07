@@ -1,0 +1,5 @@
+<decorators defaultdir="/decorators">
+    <excludes>
+        <pattern>/zkau/*</pattern>
+    </excludes>
+</decorators>

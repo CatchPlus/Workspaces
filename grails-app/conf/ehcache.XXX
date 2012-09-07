@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd">
+    <diskStore path="java.io.tmpdir"/>
+    <cacheManagerEventListenerFactory class="" properties=""/>
+    <defaultCache
+            maxElementsInMemory="100000"
+            eternal="false"
+            timeToLiveSeconds="120"
+            overflowToDisk="true"
+            diskPersistent="true"
+            />
+    <cache name="nl.of.catchplus.BaseContent"
+           maxElementsInMemory="100000"
+           timeToIdleSeconds="300"
+            />
+    <cache name="nl.of.catchplus.Bundle"
+               maxElementsInMemory="100000"
+               timeToIdleSeconds="300"
+                />
+    <cache name="nl.of.catchplus.Collection"
+               maxElementsInMemory="100000"
+               timeToIdleSeconds="300"
+                />
+    <cache name="org.hibernate.cache.UpdateTimestampsCache"
+           maxElementsInMemory="100000"
+           timeToIdleSeconds="300"
+            />
+    <cache name="org.hibernate.cache.StandardQueryCache"
+           maxElementsInMemory="100000"
+           timeToIdleSeconds="300"
+            />
+</ehcache>
